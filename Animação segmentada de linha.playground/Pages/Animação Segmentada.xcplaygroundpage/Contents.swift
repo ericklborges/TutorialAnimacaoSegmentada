@@ -2,7 +2,7 @@
 /*:
  # Como animar uma linha de forma segmentada
  
- As primeiras linhas de código configuram a ContainerView novamente.
+ As primeiras linhas de código configuram a `ContainerView` novamente.
  */
 
 import UIKit
@@ -45,17 +45,17 @@ myShapeLayer.path = myPath.cgPath
  
  Vamos criar a animação que irá desenhar a linha assim como fizemos anteriormente, e em seguida criaremos a animação que irá apagar a linha.
  
- A animação que desenha usa a KeyPath strokeEnd, como vimos anteriormente. strokeEnd representa o ponto final, a extremidade final do path. Enquanto strokeStart, usado como animação que apaga alinha, representa o primeiro ponto da linha, a extermidade inicial.
+ A animação que desenha usa a KeyPath `strokeEnd`, como vimos anteriormente. `strokeEnd` representa o ponto final, a extremidade final do path. Enquanto `strokeStart`, usado como animação que apaga a linha, representa o primeiro ponto da linha, a extermidade inicial.
  
- O que causa o efeito da animação segmentada é uma relação entre o fromValue e o toValue de cada uma dessas duas animações.
+ O que causa o efeito da animação segmentada é uma relação entre o `fromValue` e o `toValue` de cada uma dessas duas animações.
  
  O que vamos fazer a seguir será exatamente o seguinte:
  
- strokeStart: fromValue = 0; toValue = 0.8
+ `strokeStart: fromValue = 0; toValue = 0.8`
  
  Isso fará com que o ponto inicial seja movido de 0% até 80% da linha total. Isso significa que ao final desta animação 80% da linha estará apagada.
  
- strokeEnd: fromValue = 0.2; toValue = 1.0
+ `strokeEnd: fromValue = 0.2; toValue = 1.0`
  
  Isso fará com que o ponto final da linha comece em 20% da linha, e acabe em 100% da linha. Isso siginifica que 80% da linha estará desenhada ao final da animação.
  
@@ -77,9 +77,9 @@ myStartAnimation.fromValue = 0.0
 myStartAnimation.toValue = 0.8
 
 /*:
- Como nós vamos trabalhar com animationGroup, os atributos duration, repeatCount etc, devem ser atribuídos somente ao grupo de animações, e não a cada animação individualmente.
+ Como nós vamos trabalhar com `animationGroup`, os atributos `duration`, `repeatCount` etc, devem ser atribuídos somente ao grupo de animações, e não a cada animação individualmente.
  
- Agora que já criamos as nosssas duas animações, vamos criar o grupo de animações, e adiciona-las a ele!
+ Agora que já criamos as nosssas duas animações, vamos criar o grupo de animações, e adicioná-las a ele!
  
  Descomente as linhas abaixo para poder visualizar a animação!
  */
@@ -89,7 +89,7 @@ let myAnimationGroup = CAAnimationGroup()
 //myAnimationGroup.duration = 3
 
 /*:
- Agora é possível perceber que a animação está funcionando perfeitamente. Como era de se esperar, a animação apresenta somente um tamanho equivalente a 20% da linha total durante o decorrer do path. Porém a linha volta ao seu estado inicial quando a animação termina. Para isso não acontecer, nós devemos definir o strokeStart e o strokeEnd desta layer. Basta agora descomentar as linhas 38 e 39 logo acima para observar isso.
+ Agora é possível perceber que a animação está funcionando perfeitamente. Como era de se esperar, a animação apresenta somente um tamanho equivalente a 20% da linha total durante o decorrer do path. Porém a linha volta ao seu estado inicial quando a animação termina. Para isso não acontecer, nós devemos definir o `strokeStart` e o `strokeEnd` desta layer. Basta agora descomentar as linhas 38 e 39 logo acima para observar isso.
  
  * Callout(Atenção): Estas são as linhas que devem ser descomentadas:\
  38 myShapeLayer.strokeStart = 0.8\
