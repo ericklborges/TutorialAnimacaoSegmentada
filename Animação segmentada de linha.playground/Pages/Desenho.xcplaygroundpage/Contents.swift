@@ -8,7 +8,7 @@
  ### Setup
  
  Nas próximas linhas vamos adicionar as duas bibliotecas básicas para que seja possível trabalhar com o playground.
- - **UIKIt**: Biblioteca fundamental para a manipulação de qualquer elemento de interface baseado em UIView
+ - **UIKit**: Biblioteca fundamental para a manipulação de qualquer elemento de interface baseado em UIView
  - **PlaygroundSupport**: Traz uma serie de funções de suporte para o playground
  */
 import UIKit
@@ -35,7 +35,7 @@ import PlaygroundSupport
 /*:
  Agora que o nosso playground já está configurado, vamos desenhar a nossa linha!
  
- Para isso, primeiro vamos criar um UIBezierPath, vamos movê-lo para o ponto inicial da nossa linha, e dizer para onde a linha deve ser desenhada.
+ Para isso, primeiro vamos criar um `UIBezierPath`, vamos movê-lo para o ponto inicial da nossa linha, e dizer para onde a linha deve ser desenhada.
  */
 
 let myPath = UIBezierPath()
@@ -43,9 +43,9 @@ myPath.move(to: CGPoint(x: 50, y: 100))        // A linha começa aqui
 myPath.addLine(to: CGPoint(x: 300, y: 100))    // E termina aqui
 
 /*:
- A nossa linha já foi criada, mas ela ainda não pode ser visualizada. Para poder ser visualizado, o UIBezierPath deve ser adicionado a um layer, que poderá definir sua cor, e a largura de seu traço.
+ A nossa linha já foi criada, mas ela ainda não pode ser visualizada. Para poder ser visualizado, o `UIBezierPath` deve ser adicionado a um layer, que poderá definir sua cor, e a largura de seu traço.
  
- Para isso vamos criar um shapeLayer que irá receber myPath como seu atributo path:
+ Para isso vamos criar um `shapeLayer` que irá receber `myPath` como seu atributo `path`:
  */
 
 let myShapeLayer = CAShapeLayer()
@@ -54,7 +54,7 @@ myShapeLayer.lineWidth = 2
 myShapeLayer.path = myPath.cgPath
 
 /*:
- Agora que nós temos um layer que contém um UIBezierPath, uma cor, e uma largura de traço, basta que essa layer seja adicionada à View principal para que a linha seja visualizada.
+ Agora que nós temos um layer que contém um `UIBezierPath`, uma cor, e uma largura de traço, basta que essa layer seja adicionada à View principal para que a linha seja visualizada.
  
  Descomente o bloco de código abaixo para ver a nossa linha!
  */
@@ -62,11 +62,11 @@ myShapeLayer.path = myPath.cgPath
 //myView.layer.addSublayer(myShapeLayer)
 
 /*:
- Experimente alterar, e adicionar os pontos definidos em myPath para perceber que é possível desenhar qualquer forma! Tente os métodos:
- - myPath.addLine
- - myPath.addQuadCurve
- - myPath.addCurve
- - myPath.addArc
+ Experimente alterar, e adicionar os pontos definidos em `myPath` para perceber que é possível desenhar qualquer forma! Tente os métodos:
+ - `myPath.addLine`
+ - `myPath.addQuadCurve`
+ - `myPath.addCurve`
+ - `myPath.addArc`
  
  ## No próximo passo vamos aprender a animar uma linha!
  */

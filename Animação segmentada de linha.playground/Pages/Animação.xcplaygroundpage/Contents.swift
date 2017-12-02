@@ -2,7 +2,7 @@
 /*:
  # Como animar uma linha
  
- As primeiras linhas de código configuram a ContainerView novamente.
+ As primeiras linhas de código configuram a `ContainerView` novamente.
  */
 import UIKit
 import PlaygroundSupport
@@ -33,11 +33,11 @@ myShapeLayer.path = myPath.cgPath
  
  A partir de agora nós vamos trabalhar na animação, que fuciona de forma muito simples.
  
- É preciso criar uma animação, e adiciona-la a layer que deve ser animada, no nosso caso, à myShapeLayer. A animação que será usada é a seguinte : CABasicAnimation(keyPath:)
+ É preciso criar uma animação e adicioná-la à layer que deve ser animada, no nosso caso, à `myShapeLayer`. A animação que será usada é a seguinte: `CABasicAnimation(keyPath:)`
  
- O chamado keyPath é uma string que neste caso vai representar o atributo escolhido para ser animado. A lista de atributos que esta função pode acessar é encontrada neste link: [Key-Value Coding Extensions](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/CoreAnimation_guide/Key-ValueCodingExtensions/Key-ValueCodingExtensions.html)
+ O chamado `keyPath` é uma string que neste caso vai representar o atributo escolhido para ser animado. A lista de atributos que esta função pode acessar é encontrada neste link: [Key-Value Coding Extensions](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/CoreAnimation_guide/Key-ValueCodingExtensions/Key-ValueCodingExtensions.html)
  
- Como a animação vai manipular um UIBezierPath vamos trabalhar com a keyPath "strokeEnd". Esta keyPath indica que iremos animar a linha sendo desenhada.
+ Como a animação vai manipular um `UIBezierPath` vamos trabalhar com a `keyPath` "strokeEnd". Esta `keyPath` indica que iremos animar a linha sendo desenhada.
  
  Alguns dos atributos essenciais para o funcionamento correto da animação são:
  - **fromValue**: Varia entre 0 e 1 e repensenta o **ponto inicial** da animação proporcional ao tamanho do path.
@@ -58,9 +58,9 @@ myShapeLayer.path = myPath.cgPath
 /*:
  * Callout(Extra):
  Mais alguns atributos de animação interessantes de se trabalhar:\
- myAnimation.repeatCount = HUGE : Repete a animação n vezes.\
- myAnimation.autoreverses = true : Roda a animação de trás para frente.\
- myAnimation.beginTime = CACurrentMediaTime() + delay : atrasa o começo da animação.
+ `myAnimation.repeatCount = HUGE` : Repete a animação n vezes.\
+ `myAnimation.autoreverses = true` : Roda a animação de trás para frente.\
+ `myAnimation.beginTime = CACurrentMediaTime() + delay` : atrasa o começo da animação.
  */
 
 //Adicionando a layer à containerView, como no programa anterior.
